@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Halaman Login Tugas Pemrograman Web</title>
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-header">
+            <header>Login Studio</header>
+        </div>
+        <div class="input-box">
+            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required id="passwordField">
+            <button type="button" id="btntoggle" class="toggle">
+                <i id="eyeIcon" class="fa fa-eye"></i> 
+            </button>
+        </div>        
+        <div class="forgot">
+            <section>
+                <input type="checkbox" id="check">
+                <label for="check">Remember me</label>
+            </section>
+            <section>
+                <a href="#">Forgot Password</a>
+            </section>
+        </div>   
+        <a href="daftar.html">
+        <div class="input-submit">
+            <button class="submit-btn" id="submit"> </button>
+            <label for="submit">Sign in</label>
+        </div>
+        </a>
+        <div class="sign-up link"> 
+            <p>Don't have an account? <a href="daftar.html">Sign up</a></p>
+        </div>
+    </div>    
+    <script>
+        const toggleButton = document.getElementById('btntoggle');  
+        const passwordField = document.getElementById('passwordField');  
+        const eyeIcon = document.getElementById('eyeIcon');  
+
+        toggleButton.addEventListener('click', function() {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text'; 
+                eyeIcon.classList.remove('fa-eye');  
+                eyeIcon.classList.add('fa-eye-slash');  
+            } else {
+                passwordField.type = 'password';  
+                eyeIcon.classList.remove('fa-eye-slash');  
+                eyeIcon.classList.add('fa-eye');  
+            }
+        });
+    </script>
+</body>
+</html>
